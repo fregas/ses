@@ -40,8 +40,8 @@ for i in 1..20
   @population << critter.reproduce
 end
 
-for i in 1..5
-  puts "generation #{i}"
+for i in 1..15
+  puts "Season #{i}"
   @population.each_with_index do |critter1,index|
     critter2 = @population[index + 1]
     if !critter2.nil?
@@ -56,7 +56,7 @@ end
 
 
 puts "-------------------------"
-puts "Generations done:"
+puts "Season done:"
 @population.each do |critter|
   puts critter.inspect
 end
