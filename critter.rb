@@ -21,10 +21,10 @@ class Critter
       puts "#{self.name} missed #{other_critter.name}"
     end
 
-    if other_critter.temp_health < 1
-      puts "----------------------------"
-    end
+  end
 
+  def heal
+    self.temp_health = self.health
   end
 
   def alive
@@ -60,7 +60,6 @@ class Critter
     $total += 1
 
     puts "#{self.name} sired #{offspring.name}"
-    puts "--------------------------------"
 
     offspring
   end
