@@ -12,9 +12,11 @@ def fight_to_death(critter1,critter2)
   puts "----------------"
   puts "#{critter1.name} fights #{critter2.name}"
   puts
-  while (critter1.alive && critter2.alive)
+  rounds = 0
+  while (critter1.alive && critter2.alive) && rounds < 50
     critter1.fight critter2
     critter2.fight critter1
+    rounds += 1
   end
 end
 
@@ -47,8 +49,8 @@ for i in 1..15
     if !critter2.nil?
       fight_to_death(critter1,critter2)
       puts "fight complete"
-      winner_takes_all(critter1)
-      winner_takes_all(critter2)
+      winner_takes_all(critter1) if critter2.dead
+      winner_takes_all(critter2) if critter1.dead
     end
   end
   @population.shuffle

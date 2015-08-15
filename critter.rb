@@ -31,6 +31,10 @@ class Critter
     temp_health > 0
   end
 
+  def dead
+    !alive
+  end
+
   def status
     if self.alive
       "alive"
